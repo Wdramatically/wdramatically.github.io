@@ -16,23 +16,23 @@
   <meta name="author" content="Martin Hou">
   <meta name="keywords" content="">
   
-    <meta name="description" content="我将会在这里记录一些学习过程">
+    <meta name="description" content="1. 栈的使用1.1 基本使用 Stack 是 JDK 1.0 的产物。它继承自 Vector，Vector 不被推荐使用了  12345678910&#x2F;&#x2F;初始化Stack&lt;Integer&gt; stack &#x3D; new Stack&lt;Integer&gt;();&#x2F;&#x2F;进栈stack.push(Element);&#x2F;&#x2F;出栈stack.pop();&#x2F;&#x2F;取栈顶值（不出栈）stack.peek();">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello-world">
-<meta property="og:url" content="https://wdramatically.github.io/2024/03/17/hello-world/index.html">
+<meta property="og:title" content="栈、队列在算法中的使用总结">
+<meta property="og:url" content="https://wdramatically.github.io/2024/03/18/%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%9C%A8%E7%AE%97%E6%B3%95%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="天官赐福">
-<meta property="og:description" content="我将会在这里记录一些学习过程">
+<meta property="og:description" content="1. 栈的使用1.1 基本使用 Stack 是 JDK 1.0 的产物。它继承自 Vector，Vector 不被推荐使用了  12345678910&#x2F;&#x2F;初始化Stack&lt;Integer&gt; stack &#x3D; new Stack&lt;Integer&gt;();&#x2F;&#x2F;进栈stack.push(Element);&#x2F;&#x2F;出栈stack.pop();&#x2F;&#x2F;取栈顶值（不出栈）stack.peek();">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wdramatically.github.io/img/test.png">
-<meta property="article:published_time" content="2024-03-17T14:10:46.000Z">
-<meta property="article:modified_time" content="2024-03-17T15:03:13.462Z">
+<meta property="article:published_time" content="2024-03-18T11:36:46.000Z">
+<meta property="article:modified_time" content="2024-03-19T15:13:08.755Z">
 <meta property="article:author" content="Martin Hou">
+<meta property="article:tag" content="栈">
+<meta property="article:tag" content="队列">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wdramatically.github.io/img/test.png">
   
   
   
-  <title>hello-world - 天官赐福</title>
+  <title>栈、队列在算法中的使用总结 - 天官赐福</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hello-world"></span>
+            <span id="subtitle" data-typed-text="栈、队列在算法中的使用总结"></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-17 22:10" pubdate>
-          2024年3月17日 晚上
+        <time datetime="2024-03-18 19:36" pubdate>
+          2024年3月18日 晚上
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          14 字
+          455 字
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -269,14 +269,63 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hello-world</h1>
+            <h1 id="seo-header">栈、队列在算法中的使用总结</h1>
             
             
               <div class="markdown-body">
                 
-                <img src="/2024/03/17/hello-world/test.png" srcset="/img/loading.gif" lazyload class="">
+                <h2 id="1-栈的使用"><a href="#1-栈的使用" class="headerlink" title="1. 栈的使用"></a>1. 栈的使用</h2><h3 id="1-1-基本使用"><a href="#1-1-基本使用" class="headerlink" title="1.1 基本使用"></a>1.1 基本使用</h3><blockquote>
+<p>Stack 是 JDK 1.0 的产物。它继承自 Vector，Vector 不被推荐使用了</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//初始化</span><br>Stack&lt;Integer&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;Integer&gt;();<br><span class="hljs-comment">//进栈</span><br>stack.push(Element);<br><span class="hljs-comment">//出栈</span><br>stack.pop();<br><span class="hljs-comment">//取栈顶值（不出栈）</span><br>stack.peek();<br><span class="hljs-comment">//判断栈是否为空</span><br>stack.isEmpty()<br></code></pre></td></tr></table></figure>
+<h3 id="1-2-进阶使用（单调栈）"><a href="#1-2-进阶使用（单调栈）" class="headerlink" title="1.2 进阶使用（单调栈）"></a>1.2 进阶使用（单调栈）</h3><p>有点忘了 等用到再整理</p>
+<h2 id="2-队列"><a href="#2-队列" class="headerlink" title="2.队列"></a>2.队列</h2><h3 id="2-1-队列的基本使用"><a href="#2-1-队列的基本使用" class="headerlink" title="2.1 队列的基本使用"></a>2.1 队列的基本使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//初始化，两种方式LinkedList、PriorityQueue优先队列放在后面整理</span><br>Queue&lt;Element&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br><span class="hljs-comment">//插入元素，如果queue有容器大小限制，超出容器大小add方法会抛异常，offer则会返回false</span><br>queue.add(element);<br>queue.offer(element);<br><br><span class="hljs-comment">//从队列头获取元素并删除，如果queue is empty，poll会返回空，remove会抛NoSuchElementException异常</span><br>queue.poll();<br>queue.remove();<br><br><span class="hljs-comment">////从队列头获取元素不删除，如果queue is empty，peek会返回空，element会抛NoSuchElementException异常</span><br>queue.element();<br>queue.peek();<br></code></pre></td></tr></table></figure>
 
-<p>我将会在这里记录一些学习过程</p>
+<h3 id="2-2-优先队列"><a href="#2-2-优先队列" class="headerlink" title="2.2 优先队列"></a>2.2 优先队列</h3><p>优先队列是队列的一种实现，基于优先堆，不允许插入null对象以及non-comparable对象，由于实现了Collection接口，可以使用pq.toArray()方法进行数组操作，对于元素的操作方法与Queue一致。</p>
+<p>使用实例：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-operations-to-halve-array-sum/description/">2208. 将数组和减半的最少操作次数</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//每次选取最大的数值进行减半操作</span><br><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">halveArray</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        PriorityQueue&lt;Double&gt; queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;(Comparator.comparingDouble(o -&gt; o));<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">double</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">double</span> <span class="hljs-variable">sub</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>            sum += nums[i];<br>            queue.offer((<span class="hljs-type">double</span>)nums[i]);<br>        &#125;<br><br>        <span class="hljs-keyword">while</span> (sub &lt; sum / <span class="hljs-number">2.0</span>) &#123;<br>            <span class="hljs-type">double</span> <span class="hljs-variable">maxVal</span> <span class="hljs-operator">=</span> queue.poll() / <span class="hljs-number">2.0</span>;<br>            sub += maxVal;<br>            queue.offer(maxVal);<br>            ans++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-3-双端队列"><a href="#2-3-双端队列" class="headerlink" title="2.3 双端队列"></a>2.3 双端队列</h3><p>Deque继承自Queue接口，最常见的实现也是LinkedList，不同于Queue顾名思义多了对队列头尾的操作，以下摘自Deque注释Since 1.6:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>First Element (Head)</th>
+<th></th>
+<th>Last Element (Tail)</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>Throws exception</td>
+<td>Special value</td>
+<td>Throws exception</td>
+<td>Special value</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td>addFirst(e)</td>
+<td>offerFirst(e)</td>
+<td>addLast(e)</td>
+<td>offerLast(e)</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>removeFirst()</td>
+<td>pollFirst()</td>
+<td>removeLast()</td>
+<td>pollLast()</td>
+</tr>
+<tr>
+<td>Examine</td>
+<td>getFirst()</td>
+<td>peekFirst()</td>
+<td>getLast()</td>
+<td>peekLast()</td>
+</tr>
+</tbody></table>
+<p>实例后续补充</p>
 
                 
               </div>
@@ -285,6 +334,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%A0%88/" class="print-no-link">#栈</a>
+      
+        <a href="/tags/%E9%98%9F%E5%88%97/" class="print-no-link">#队列</a>
+      
+    </div>
   
 </div>
 
@@ -294,8 +373,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hello-world</div>
-      <div>https://wdramatically.github.io/2024/03/17/hello-world/</div>
+      <div>栈、队列在算法中的使用总结</div>
+      <div>https://wdramatically.github.io/2024/03/18/栈、队列在算法中的使用总结/</div>
     </div>
     <div class="license-meta">
       
@@ -307,7 +386,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月17日</div>
+          <div>2024年3月18日</div>
         </div>
       
       
@@ -339,15 +418,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/18/%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%9C%A8%E7%AE%97%E6%B3%95%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" title="栈、队列在算法中的使用总结">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">栈、队列在算法中的使用总结</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2024/03/17/hello-world/" title="hello-world">
+                        <span class="hidden-mobile">hello-world</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
